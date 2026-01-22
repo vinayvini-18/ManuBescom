@@ -234,15 +234,17 @@
             50% { box-shadow: 0 0 20px rgba(250, 204, 21, 0.8); }
         }
 
-        /* Mobile Menu */
+        /* Mobile Menu Fixed */
         #mobile-menu {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.3s ease-in-out;
         }
 
         #mobile-menu.active {
-            max-height: 500px;
+            /* Fix: Limit height to viewport - header size, and allow internal scrolling */
+            max-height: calc(100vh - 70px);
+            overflow-y: auto;
         }
 
         /* Navigation active state */
